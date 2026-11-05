@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6eee4">
+  <meta name="description" content="Una celebración de amor en Aruba. 16 de octubre de 2027.">
+  <title>Una boda en Aruba · 16 de octubre de 2027</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #244b50;
+      --muted: #587276;
+      --sand: #f6eee4;
+      --coral: #c96e59;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      color: var(--ink);
+      background: var(--sand);
+      font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+
+    .invitation {
+      display: grid;
+      min-height: 100svh;
+      place-items: center;
+      padding: 32px 20px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 110%, rgba(245, 204, 151, .65), transparent 42%),
+        linear-gradient(180deg, #f8f0e7 0%, #f5e9d8 56%, #d7e9e3 100%);
+    }
+
+    .card {
+      position: relative;
+      width: min(100%, 720px);
+      padding: clamp(42px, 8vw, 78px) clamp(24px, 8vw, 80px);
+      border: 1px solid rgba(255, 253, 249, .9);
+      background: rgba(255, 253, 249, .78);
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(49, 83, 79, .10);
+      animation: arrive 900ms ease-out both;
+    }
+
+    .card::before,
+    .card::after {
+      position: absolute;
+      right: 18px;
+      left: 18px;
+      height: 1px;
+      content: "";
+      background: linear-gradient(90deg, transparent, rgba(201, 110, 89, .45), transparent);
+    }
+
+    .card::before {
+      top: 16px;
+    }
+
+    .card::after {
+      bottom: 16px;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--coral);
+      font-family: Arial, sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 5.8rem);
+      font-weight: 400;
+      letter-spacing: -.055em;
+      line-height: .98;
+    }
+
+    .intro {
+      max-width: 440px;
+      margin: 26px auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.8vw, 1.2rem);
+      line-height: 1.75;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 34px 0 30px;
+      color: var(--coral);
+      font-size: 1rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      width: 48px;
+      height: 1px;
+      content: "";
+      background: #d7b6a2;
+    }
+
+    .date {
+      margin: 0;
+      font-size: clamp(1.2rem, 4vw, 1.65rem);
+      letter-spacing: .045em;
+    }
+
+    .place {
+      margin: 12px 0 0;
+      color: var(--coral);
+      font-family: Arial, sans-serif;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .note {
+      margin: 38px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+      font-style: italic;
+    }
+
+    .sun {
+      position: absolute;
+      top: 8%;
+      right: max(8%, calc((100vw - 1000px) / 2));
+      width: 92px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(236, 177, 126, .22);
+      box-shadow: 0 0 0 18px rgba(236, 177, 126, .08), 0 0 0 38px rgba(236, 177, 126, .05);
+    }
+
+    @keyframes arrive {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .invitation {
+        padding: 20px 14px;
+      }
+
+      .card {
+        padding-right: 22px;
+        padding-left: 22px;
+      }
+
+      .sun {
+        top: 4%;
+        right: 7%;
+        width: 58px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="invitation">
+    <div class="sun" aria-hidden="true"></div>
+    <article class="card" aria-labelledby="title">
+      <p class="eyebrow">Con mucha ilusión, te invitamos a celebrar</p>
+      <h1 id="title">Una boda<br>en Aruba</h1>
+      <p class="intro">Un día para celebrar el amor junto al mar, bajo el cálido sol del Caribe.</p>
+      <div class="divider" aria-hidden="true">✦</div>
+      <p class="date"><time datetime="2027-10-16">16 de octubre de 2027</time></p>
+      <p class="place">Aruba</p>
+      <p class="note">Pronto compartiremos más detalles.</p>
+    </article>
+  </main>
+</body>
+</html>
